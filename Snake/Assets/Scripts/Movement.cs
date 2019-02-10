@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour {
     private float speed = 10f;
     private float jump = 25f;
     private float gravity = 30f;
+    public int length = 1;
     private Vector3 Direction = Vector3.zero;
 
     // Start is called before the first frame update
@@ -14,6 +15,16 @@ public class Movement : MonoBehaviour {
 
     }
 
+    // 
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.name == "Food")
+        {
+            Destroy(col.gameObject);
+            length++;
+        }
+       
+    }
     // Update is called once per frame
     void Update()
     {
