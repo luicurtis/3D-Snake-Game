@@ -11,10 +11,15 @@ public class Movement : MonoBehaviour
     public GameObject Head;
     public int startSize;
     public float minimumdist = 3f;
+    public float jump = 5f;
+    public float gravity = 100f;
 
     private float dist;
     private Transform currentBody;
     private Transform PreviousBody;
+    private Rigidbody rb;
+    private Vector3 Direction = Vector3.zero;
+    
 
 
     // Start is called before the first frame update
@@ -24,6 +29,9 @@ public class Movement : MonoBehaviour
         {
             addSnakeBody();
         }
+
+        rb = GetComponent<Rigidbody>();
+
 
     }
 
@@ -41,6 +49,11 @@ public class Movement : MonoBehaviour
     {
         SnakeMove();
 
+        if (Input.GetButtonDown("Jump")) {
+            Direction.y = jump;
+            rb.velocity = Direction;
+        }
+        Direction.y -= gravity * Time.deltaTime;
     }
 
 

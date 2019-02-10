@@ -23,6 +23,7 @@ public class RandomFood : MonoBehaviour
         {
             this.Spawn();
             time = 0;
+            Object.Destroy(Food, 7.0f);
         }
         else
         {
