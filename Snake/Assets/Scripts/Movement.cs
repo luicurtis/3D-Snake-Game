@@ -27,16 +27,23 @@ public class Movement : MonoBehaviour
 
     }
 
-
-    private void LateUpdate()
+    void OnCollisionEnter(Collision col)
     {
-        SnakeMove();
-        if (Input.GetKey(KeyCode.Q))
+        if (col.gameObject.name.Contains("Food"))
         {
+            Destroy(col.gameObject);
             addSnakeBody();
         }
+    }
+
+
+    private void Update()
+    {
+        SnakeMove();
 
     }
+
+
 
     void SnakeMove()
     {
