@@ -10,4 +10,4 @@
 - Unity
 - C#
 
-![image](https://user-images.githubusercontent.com/43712033/53237664-1472e800-364c-11e9-8d3a-f5ad5988a404.png)
+<img width="632" alt="screen shot 2019-02-22 at 2 49 34 am" src="https://user-images.githubusercontent.com/43712033/53237831-89deb880-364c-11e9-8efa-433c717fb633.png">
